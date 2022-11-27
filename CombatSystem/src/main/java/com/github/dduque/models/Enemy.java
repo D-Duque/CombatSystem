@@ -3,25 +3,30 @@ package com.github.dduque.models;
 public class Enemy {
 
     private String name;
-    private double health = 100.0;
-    private double damage = 1.0;
-    private int armor = 0;
+    private static double health = 100.0;
+    private static double damage = 1.0;
+    private static int armor = 0;
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
     public double getHealth() {return health;}
-    public void setHealth(double health) {this.health = health;}
+    public static void setHealth(double health) {Enemy.health = health;}
 
     public double getDamage() {return damage;}
-    public void setDamage(double damage) {this.damage = damage;}
+    public static void setDamage(double damage) {Enemy.damage = damage;}
 
     public double getArmor() {return armor;}
-    public void setArmor(int armor) {this.armor = armor;}
+    public static void setArmor(int armor) {Enemy.armor = armor;}
 
     public Enemy()
     {
 
+    }
+
+    public Enemy(String name)
+    {
+        this.name = name;
     }
 
     public Enemy(String name, double health, double damage, int armor)
@@ -31,4 +36,6 @@ public class Enemy {
         this.damage = damage;
         this.armor = armor;
     }
+
+
 }

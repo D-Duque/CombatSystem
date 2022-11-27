@@ -1,5 +1,7 @@
 package com.github.dduque.models;
 
+import com.github.dduque.models.items.Weapon;
+
 public class Player {
 
     private String name;
@@ -8,7 +10,7 @@ public class Player {
     private int armor = 0;
 
     public String getName() {return name;}
-    public void setName(String name) {this.name = name;}
+
 
     public double getHealth() {return health;}
     public void setHealth(double health) {this.health = health;}
@@ -28,4 +30,20 @@ public class Player {
         this.armor = armor;
         this.damage = damage;
     }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    // attack
+    public void attackEnemy(Enemy enemy, Weapon weapon)
+    {
+        // check enemy armor rating and if player damage is above armor rating
+
+        // if damage is above armor rating, reduce HP by difference
+    }
+    // defend
+
+    // heal
 }
