@@ -36,8 +36,13 @@ public class Player {
         this.name = name;
     }
 
+    public double calculateDamage(Weapon weapon)
+    {
+        return damage;
+    }
+
     // attack
-    public void attackEnemy(Enemy enemy, Weapon weapon)
+    public void attackEnemy(Enemy enemy)
     {
         // check enemy armor rating and if player damage is above armor rating
 
