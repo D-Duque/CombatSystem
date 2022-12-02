@@ -1,9 +1,7 @@
 package com.github.dduque.models;
 
-import com.github.dduque.models.items.Sword;
+import com.github.dduque.models.items.weapons.Sword;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PlayerTest {
 

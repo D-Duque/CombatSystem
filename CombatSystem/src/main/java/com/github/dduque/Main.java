@@ -1,11 +1,10 @@
 package com.github.dduque;
 
 import com.github.dduque.models.Enemy;
-import com.github.dduque.models.Goblin;
 import com.github.dduque.models.Player;
 import com.github.dduque.models.UI.UserInput;
 import com.github.dduque.models.UI.UserOutput;
-import com.github.dduque.models.items.Sword;
+import com.github.dduque.models.items.weapons.Sword;
 
 public class Main {
 

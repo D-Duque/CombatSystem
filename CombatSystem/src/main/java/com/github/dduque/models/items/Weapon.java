@@ -1,6 +1,8 @@
 package com.github.dduque.models.items;
 
-public class Weapon {
+import com.github.dduque.models.Inventory;
+
+public abstract class Weapon extends Item {
 
     private String name;
 
@@ -10,42 +12,26 @@ public class Weapon {
 
     private int weight = 0;
 
+    private ItemType itemType = ItemType.WEAPON;
 
-    public String getName() {
-        return name;
-    }
+    private boolean isEquipped = false;
 
-    public double getDamageBonus() {
-        return damageBonus;
-    }
+    public boolean isEquipped() {return isEquipped;}
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+    public void setEquipped(boolean equipped) {isEquipped = equipped;}
 
-    public void setDamageBonus(double damageBonus) {
-        this.damageBonus = damageBonus;
-    }
-
-    public void setHealBonus(double healBonus) {
-        this.healBonus = healBonus;
-    }
-
-    public double getHealBonus() {
-        return healBonus;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
+    // constructors
     public Weapon() {
     }
 
-    public Weapon(String name, double damageBonus, double healBonus, int weight) {
+    public Weapon(String name, double damageBonus, double healBonus, int weight, ItemType itemType) {
         this.name = name;
         this.damageBonus = damageBonus;
         this.healBonus = healBonus;
         this.weight = weight;
+        this.itemType = itemType;
     }
+
+    // methods
+
 }
