@@ -36,16 +36,18 @@ public class Player {
         this.name = name;
     }
 
-    public static double calculateDamage(Weapon weapon)
+    public static double calculateDamage()
     {
+        // total damage = base player damage + equipped damage bonus. If total damage > enemy armor, take from enemy health - armor.
         // TODO: include base player damage.
         double damage = 0;
-        for (int i = 0; i < Inventory.itemList.size(); i++) {
-            //TODO: change list to accept all items, not just weapons
-            Weapon currentWeapon = Inventory.itemList.get(i);
-            double currentWeaponDamage = currentWeapon.getDamageBonus();
-            damage += currentWeaponDamage;
-        }
+//        for (int i = 0; i < Inventory.itemList.size(); i++) {
+//            //TODO: change list to accept all items, not just weapons
+//            if ()
+//            Weapon currentWeapon = Inventory.itemList.get(i);
+//            double currentWeaponDamage = currentWeapon.getDamageBonus();
+//            damage += currentWeaponDamage;
+//        }
         System.out.println(damage);
         return damage;
     }

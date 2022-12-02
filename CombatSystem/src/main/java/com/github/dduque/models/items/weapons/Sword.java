@@ -15,6 +15,9 @@ public class Sword extends Weapon
         setWeight(weight);
     }
 
+    @Override
+    public void addToInventory()
+    {
 
-
+    }
 }

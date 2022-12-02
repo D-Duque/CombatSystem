@@ -22,11 +22,8 @@ public class Main {
         UserOutput.displayCombatBegin();
 
         Sword sword = new Sword();
-        Sword.addSwordToInventory(sword);
-        Sword.addSwordToInventory(sword);
-        Sword.addSwordToInventory(sword);
 
-        double damage = Player.calculateDamage(sword);
+        double damage = Player.calculateDamage();
     }
 
     public static void initiateCombat(Player player, Enemy enemy)

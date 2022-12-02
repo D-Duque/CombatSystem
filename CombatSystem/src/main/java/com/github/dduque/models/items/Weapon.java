@@ -1,7 +1,5 @@
 package com.github.dduque.models.items;
 
-import com.github.dduque.models.Inventory;
-
 public abstract class Weapon extends Item {
 
     private String name;

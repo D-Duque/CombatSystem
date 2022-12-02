@@ -2,7 +2,7 @@ package com.github.dduque.models.items;
 
 import com.github.dduque.models.Inventory;
 
-public abstract class Item
+public abstract class Item implements Storable
 {
     private String name;
 
@@ -69,8 +69,9 @@ public abstract class Item
         return itemType;
     }
 
-    public void addToInventory(Weapon weapon)
+
+    public void addToInventory(Item item)
     {
-        Inventory.itemList.add(weapon);
+        Inventory.itemList.add(item);
     }
 }
