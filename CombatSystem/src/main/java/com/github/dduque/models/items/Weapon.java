@@ -19,6 +19,18 @@ public class Weapon {
         return damageBonus;
     }
 
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setDamageBonus(double damageBonus) {
+        this.damageBonus = damageBonus;
+    }
+
+    public void setHealBonus(double healBonus) {
+        this.healBonus = healBonus;
+    }
+
     public double getHealBonus() {
         return healBonus;
     }

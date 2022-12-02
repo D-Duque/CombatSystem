@@ -1,5 +1,7 @@
 package com.github.dduque.models;
 
+import com.github.dduque.models.items.Inventory;
+import com.github.dduque.models.items.Sword;
 import com.github.dduque.models.items.Weapon;
 
 public class Player {
@@ -36,8 +38,16 @@ public class Player {
         this.name = name;
     }
 
-    public double calculateDamage(Weapon weapon)
+    public static double calculateDamage(Weapon weapon)
     {
+        // TODO: include base player damage.
+        double damage = 0;
+        for (int i = 0; i < Inventory.weaponsList.size(); i++) {
+            Weapon currentWeapon = Inventory.weaponsList.get(i);
+            double currentWeaponDamage = currentWeapon.getDamageBonus();
+            damage += currentWeaponDamage;
+        }
+        System.out.println(damage);
         return damage;
     }
 
