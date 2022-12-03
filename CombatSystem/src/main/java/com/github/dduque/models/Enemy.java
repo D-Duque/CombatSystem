@@ -11,13 +11,13 @@ public class Enemy {
     public void setName(String name) {this.name = name;}
 
     public double getHealth() {return health;}
-    public static void setHealth(double health) {Enemy.health = health;}
+    public void setHealth(double health) {Enemy.health = health;}
 
     public double getDamage() {return damage;}
-    public static void setDamage(double damage) {Enemy.damage = damage;}
+    public void setDamage(double damage) {Enemy.damage = damage;}
 
     public double getArmor() {return armor;}
-    public static void setArmor(int armor) {Enemy.armor = armor;}
+    public void setArmor(int armor) {Enemy.armor = armor;}
 
     public Enemy()
     {

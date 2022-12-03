@@ -12,6 +12,9 @@ public class Inventory {
 
     public void listInventory()
     {
-
+        for (Item item: itemList)
+        {
+            System.out.println(item);
+        }
     }
 }

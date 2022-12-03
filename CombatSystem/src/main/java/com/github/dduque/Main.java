@@ -1,6 +1,7 @@
 package com.github.dduque;
 
 import com.github.dduque.models.Enemy;
+import com.github.dduque.models.Goblin;
 import com.github.dduque.models.Player;
 import com.github.dduque.models.UI.UserInput;
 import com.github.dduque.models.UI.UserOutput;
@@ -22,8 +23,8 @@ public class Main {
         UserOutput.displayCombatBegin();
 
         Sword sword = new Sword();
-
-        double damage = Player.calculateDamage();
+        Goblin goblin = new Goblin();
+        Player.attackEnemy(goblin);
     }
 
     public static void initiateCombat(Player player, Enemy enemy)
