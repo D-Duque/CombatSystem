@@ -23,8 +23,11 @@ public class Main {
         UserOutput.displayCombatBegin();
 
         Sword sword = new Sword();
+        sword.addToInventory(sword);
         Goblin goblin = new Goblin();
+
         Player.attackEnemy(goblin);
+
     }
 
     public static void initiateCombat(Player player, Enemy enemy)

@@ -6,9 +6,15 @@ public abstract class Item implements Storable
 {
     private String name;
 
-    private double damageBonus;
+    private double minDamageBonus;
 
-    private double healBonus;
+    private double maxDamageBonus;
+
+    private double minHealBonus;
+
+    private double maxHealBonus;
+
+
 
     private int weight = 0;
 
@@ -20,11 +26,13 @@ public abstract class Item implements Storable
 
     }
 
-    public Item(String name, double damageBonus, double healBonus, int weight, ItemType itemType)
+    public Item(String name, double minDamageBonus, double maxDamageBonus, double minHealBonus, double maxHealBonus, int weight, ItemType itemType)
     {
         this.name = name;
-        this.damageBonus = damageBonus;
-        this.healBonus = healBonus;
+        this.minDamageBonus = minDamageBonus;
+        this.maxDamageBonus = maxDamageBonus;
+        this.minHealBonus = minHealBonus;
+        this.maxHealBonus = maxHealBonus;
         this.weight = weight;
         this.itemType = itemType;
     }
@@ -39,24 +47,40 @@ public abstract class Item implements Storable
         return name;
     }
 
-    public double getDamageBonus()
+    public double getMinDamageBonus()
     {
-        return damageBonus;
+        return minDamageBonus;
     }
 
-    public void setDamageBonus(double damageBonus)
+    public void setMinDamageBonus(double minDamageBonus)
     {
-        this.damageBonus = damageBonus;
+        this.minDamageBonus = minDamageBonus;
     }
 
-    public double getHealBonus()
-    {
-        return healBonus;
+    public double getMaxDamageBonus() {
+        return maxDamageBonus;
     }
 
-    public void setHealBonus(double healBonus)
+    public void setMaxDamageBonus(double maxDamageBonus) {
+        this.maxDamageBonus = maxDamageBonus;
+    }
+
+    public double getMinHealBonus()
     {
-        this.healBonus = healBonus;
+        return minHealBonus;
+    }
+
+    public void setMinHealBonus(double minHealBonus)
+    {
+        this.minHealBonus = minHealBonus;
+    }
+
+    public double getMaxHealBonus() {
+        return maxHealBonus;
+    }
+
+    public void setMaxHealBonus(double maxHealBonus) {
+        this.maxHealBonus = maxHealBonus;
     }
 
     public int getWeight()
@@ -69,6 +93,9 @@ public abstract class Item implements Storable
         return itemType;
     }
 
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 
     public void addToInventory(Item item)
     {
