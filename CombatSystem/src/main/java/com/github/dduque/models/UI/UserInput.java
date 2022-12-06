@@ -10,6 +10,12 @@ public class UserInput {
 
     private static Scanner input = new Scanner(System.in);
 
+    public void setPlayerName(Player player)
+    {
+        player.setName(input.nextLine().trim());
+    }
+
+
     public int getWeaponSelection() {
         int weaponSelection = Integer.parseInt(input.nextLine());
         return weaponSelection;

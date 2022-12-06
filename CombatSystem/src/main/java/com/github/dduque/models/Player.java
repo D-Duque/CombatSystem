@@ -5,7 +5,7 @@ import com.github.dduque.models.items.Item;
 import com.github.dduque.models.items.ItemType;
 
 public class Player extends Character {
-    private String name;
+    private String name = "";
     private double health = 10.0;
     private static double damage = 0.0;
     private int armor = 1;

@@ -25,9 +25,12 @@ public class Game
     {
         Player player = new Player();
         int menuSelection = -1;
-        // display intro to prompt user for name
+        // TODO: fix null showing up for name when getName is called.
+
         userOutput.displayIntro();
-        System.out.println("Name not implemented yet.");
+        userOutput.displayName();
+        userInput.setPlayerName(player);
+
         //prompt user for weapon choice
         userOutput.displayWeaponSelectionMenu();
 
@@ -111,7 +114,8 @@ public class Game
         }
         if (!isEnemyAlive)
         {
-            System.out.println("You have defeated: " + enemy.getName() + " !");
+            String playerName = player.getName();
+            System.out.println(playerName + ", you have defeated: " + enemy.getName() + " !");
             System.out.println();
         }
         else

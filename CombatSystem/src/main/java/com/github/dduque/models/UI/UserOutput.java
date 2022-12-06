@@ -8,6 +8,11 @@ import java.util.Scanner;
 
 public class UserOutput {
     private static Scanner playerInput = new Scanner(System.in);
+
+    public void displayName() {
+        System.out.println("What is your name?");
+
+    }
     public void displayIntro()
     {
         System.out.println("Welcome to this combat system! To begin, what is your name: ");
