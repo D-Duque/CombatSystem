@@ -6,8 +6,8 @@ import com.github.dduque.models.items.ItemType;
 
 public class Player extends Character {
     private String name;
-    private double health = 100.0;
-    private static double damage = 1.0;
+    private double health = 10.0;
+    private static double damage = 0.0;
     private int armor = 1;
 
 
@@ -28,9 +28,9 @@ public class Player extends Character {
     }
 
     // attack
-    public static void attackEnemy(Enemy enemy)
+    public void attackEnemy(Enemy enemy)
     {
-        System.out.println("Beginning enemy health: " + enemy.getHealth());
+
         // calculate weapon damage
         double totalWeaponDamage = 0;
         for (Item item : Inventory.itemList)
@@ -41,7 +41,6 @@ public class Player extends Character {
             if (itemType == ItemType.WEAPON)
             {
                 totalWeaponDamage += Math.floor(Math.random()*(maxWepDamageBonus - minWepDamageBonus + 1) + minWepDamageBonus);
-                System.out.println("total weapon damage: " + totalWeaponDamage);
             }
         }
 
@@ -51,9 +50,12 @@ public class Player extends Character {
         if (totalDamage > enemy.getArmor())
             {
             // if damage > armor, reduce enemy health
-                enemy.setHealth(enemy.getHealth() - (totalDamage - enemy.getArmor()));
-                System.out.println("Total damage done: " + totalDamage);
-                System.out.println("Remaining enemy health: " + enemy.getHealth());
+                if (totalDamage > enemy.getHealth())
+                {
+                    enemy.setHealth(0);
+                }
+                else {enemy.setHealth(enemy.getHealth() - (totalDamage - enemy.getArmor()));}
+                System.out.println("You slice with your weapon and deal:  " + totalDamage + " damage!");
             }
         else {
             // if not, print attack did not land message.

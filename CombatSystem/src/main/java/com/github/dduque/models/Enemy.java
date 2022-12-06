@@ -1,10 +1,13 @@
 package com.github.dduque.models;
 
+import com.github.dduque.models.items.Item;
+import com.github.dduque.models.items.ItemType;
+
 public class Enemy {
 
     private String name;
     private static double health = 100.0;
-    private static double damage = 1.0;
+    private static double damage = 2.0;
     private static int armor = 0;
 
     public String getName() {return name;}
@@ -37,5 +40,20 @@ public class Enemy {
         this.armor = armor;
     }
 
+    public void attackPlayer(Player player)
+    {
+
+        if (damage > player.getArmor())
+        {
+            // if damage > armor, reduce enemy health
+            player.setHealth(player.getHealth() - (damage - player.getArmor()));
+            System.out.println(getName() + " deals " + damage + " damage to you!");
+        }
+        else {
+            // if not, print attack did not land message.
+            System.out.println("The enemy misses you!");
+        }
+        System.out.println();
+    }
 
 }
