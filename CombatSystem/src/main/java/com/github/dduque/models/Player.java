@@ -1,11 +1,9 @@
 package com.github.dduque.models;
 
-import com.github.dduque.models.items.Character;
 import com.github.dduque.models.items.Item;
 import com.github.dduque.models.items.ItemType;
 
 public class Player extends Character {
-    private String name = "";
     private double health = 10.0;
     private static double damage = 0.0;
     private int armor = 1;
@@ -22,10 +20,7 @@ public class Player extends Character {
         super(name, 100.0, 1, 1.0);
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
+
 
     // attack
     public void attackEnemy(Enemy enemy)

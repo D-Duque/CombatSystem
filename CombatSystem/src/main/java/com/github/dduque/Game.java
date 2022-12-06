@@ -25,8 +25,8 @@ public class Game
     {
         Player player = new Player();
         int menuSelection = -1;
-        // TODO: fix null showing up for name when getName is called.
 
+        // prompt user for name
         userOutput.displayIntro();
         userOutput.displayName();
         userInput.setPlayerName(player);

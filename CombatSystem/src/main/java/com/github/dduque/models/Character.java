@@ -1,4 +1,4 @@
-package com.github.dduque.models.items;
+package com.github.dduque.models;
 
 public abstract class Character {
     private String name;
@@ -7,7 +7,10 @@ public abstract class Character {
     private int armor;
 
     public String getName() {return name;}
-
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
     public double getHealth() {return health;}
     public void setHealth(double health) {this.health = health;}

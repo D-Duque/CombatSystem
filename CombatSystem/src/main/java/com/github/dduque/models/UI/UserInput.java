@@ -15,7 +15,6 @@ public class UserInput {
         player.setName(input.nextLine().trim());
     }
 
-
     public int getWeaponSelection() {
         int weaponSelection = Integer.parseInt(input.nextLine());
         return weaponSelection;
