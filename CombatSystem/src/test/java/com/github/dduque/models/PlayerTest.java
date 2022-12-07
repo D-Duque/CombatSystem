@@ -29,18 +29,27 @@ public class PlayerTest {
         Assert.assertEquals(message, expectedhealth, actualHealth, 0.5);
     }
 
-    public void attackEnemy_ShouldCheckIfPlayerDamageIsGreaterThanArmorBeforeReducingEnemyHealth()
+
+    @Test
+    public void defend_ShouldIncreaseArmorBy2WithoutShield()
     {
         // arrange
-        double expectedHealth = 10.0;
-        testGoblin.setArmor(2);
+        int expected = 2;
         // act
-        testPlayer.attackEnemy(testGoblin);
-        double actualHealth = testGoblin.getHealth();
-
+        testPlayer.defend();
+        int actual = testPlayer.getTotalArmor();
         // assert
-        String message = "Because an enemy with an armor rating higher than the player's damage should not have its health reduced.";
-        Assert.assertEquals(message, expectedHealth, actualHealth, 0.5);
-
+        String message = "Because defending should add 2 to player's total armor if they do not have a shield.";
+        Assert.assertEquals(message, expected, actual);
     }
+
+//    @Test
+//    public void defend_ShouldIncreaseArmorByArmorRatingOfShieldWhenShieldIsEquipped()
+//    {
+//        // arrange
+//
+//        // act
+//
+//        // assert
+//    }
 }

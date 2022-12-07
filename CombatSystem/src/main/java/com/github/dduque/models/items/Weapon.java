@@ -1,5 +1,7 @@
 package com.github.dduque.models.items;
 
+import com.github.dduque.models.Inventory;
+
 public abstract class Weapon extends Item {
 
     private String name;
@@ -31,5 +33,12 @@ public abstract class Weapon extends Item {
     }
 
     // methods
-
+    public void equip(Weapon weapon)
+    {
+        // check if list size is > 0
+        // if size is greater than 0, retrieve item and move to player inventory
+        if (Inventory.equippedWeapon.length > 0) {Inventory.playerInventory.add(Inventory.equippedWeapon[0]);}
+        // Add weapon to equippedWeapon
+        Inventory.equippedWeapon[0] = weapon;
+    }
 }

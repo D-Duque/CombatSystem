@@ -99,6 +99,6 @@ public abstract class Item implements Storable
 
     public void addToInventory(Item item)
     {
-        Inventory.itemList.add(item);
+        Inventory.playerInventory.add(item);
     }
 }

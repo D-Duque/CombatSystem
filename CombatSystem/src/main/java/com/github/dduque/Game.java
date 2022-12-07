@@ -40,7 +40,7 @@ public class Game
             if (menuSelection == 1)
             {
                 Sword sword = new Sword();
-                sword.addToInventory(sword);
+                sword.equip(sword);
                 System.out.println("\nYou have selected a sword!\n");
                 menuSelection = 0;
             }
@@ -99,7 +99,7 @@ public class Game
             }
             else if (turnSelection == 2)
             { // defend
-                System.out.println("This is not implemented yet.");
+                player.defend();
             }
             else if (turnSelection == 3)
             { // use item

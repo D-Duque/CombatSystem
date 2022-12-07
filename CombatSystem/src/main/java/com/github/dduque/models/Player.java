@@ -6,21 +6,31 @@ import com.github.dduque.models.items.ItemType;
 public class Player extends Character {
     private double health = 10.0;
     private static double damage = 0.0;
-    private int armor = 1;
+    private int tempArmor;
+    private int equippedArmor;
 
+
+    public int getTempArmor() {return tempArmor;}
+
+    public void setTempArmor(int tempArmor) {this.tempArmor = tempArmor;}
+
+
+    public int getEquippedArmor() {return equippedArmor;}
+
+    public void setEquippedArmor(int equippedArmor) {this.equippedArmor = equippedArmor;}
+
+
+    public int getTotalArmor() {return tempArmor + equippedArmor;}
 
     public Player() {
         super();
         setHealth(health);
         setDamage(damage);
-        setArmor(armor);
     }
 
-    public Player(String name, double health, int armor, double damage) {
+    public Player(String name, double health, int totalArmor, double damage) {
         super(name, 100.0, 1, 1.0);
     }
-
-
 
     // attack
     public void attackEnemy(Enemy enemy)
@@ -28,7 +38,7 @@ public class Player extends Character {
 
         // calculate weapon damage
         double totalWeaponDamage = 0;
-        for (Item item : Inventory.itemList)
+        for (Item item : Inventory.playerInventory)
         {
             double minWepDamageBonus = item.getMinDamageBonus();
             double maxWepDamageBonus = item.getMaxDamageBonus();
@@ -59,6 +69,10 @@ public class Player extends Character {
         System.out.println();
     }
     // defend
-
+    public void defend()
+    {
+        // check for any equipped shields, if shield is equipped, defend bonus is greater.
+        setTempArmor(2);
+    }
     // heal
 }

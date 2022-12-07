@@ -16,7 +16,6 @@ public abstract class Character {
     public void setHealth(double health) {this.health = health;}
 
     public int getArmor() {return armor;}
-    public void setArmor(int armor) {this.armor = armor;}
 
     public double getDamage() {return damage;}
     public void setDamage(double damage) {this.damage = damage;}

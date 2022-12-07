@@ -46,7 +46,7 @@ public class Enemy {
         if (damage > player.getArmor())
         {
             // if damage > armor, reduce enemy health
-            player.setHealth(player.getHealth() - (damage - player.getArmor()));
+            player.setHealth(player.getHealth() - (damage - player.getTotalArmor()));
             System.out.println(getName() + " deals " + damage + " damage to you!");
         }
         else {

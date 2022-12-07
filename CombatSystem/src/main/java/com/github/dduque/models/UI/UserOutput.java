@@ -22,16 +22,16 @@ public class UserOutput {
     {
         System.out.println("Now, choose your weapon: ");
         System.out.println("1. Sword");
-        System.out.println("2. Bow");
-        System.out.println("3. Staff");
+        System.out.println("2. Bow (Not implemented.)");
+        System.out.println("3. Staff (Not implemented.)");
     }
 
     public void displayEnemyList()
     {
         System.out.println("Now, select your enemy: ");
         System.out.println("1. Goblin");
-        System.out.println("2. Dragon (Not implemented)");
-        System.out.println("3. Hag (Not implemented)");
+        System.out.println("2. Bugbear (Not implemented.)");
+        System.out.println("3. Dragon (Not implemented.)");
     }
 
     public Enemy displayEnemySelection(char enemySelection)
