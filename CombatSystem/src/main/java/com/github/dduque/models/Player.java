@@ -38,7 +38,7 @@ public class Player extends Character {
 
         // calculate weapon damage
         double totalWeaponDamage = 0;
-        for (Item item : Inventory.playerInventory)
+        for (Item item : Inventory.equippedWeapon)
         {
             double minWepDamageBonus = item.getMinDamageBonus();
             double maxWepDamageBonus = item.getMaxDamageBonus();
