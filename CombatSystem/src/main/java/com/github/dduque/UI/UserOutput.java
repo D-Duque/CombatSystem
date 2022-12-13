@@ -1,8 +1,9 @@
-package com.github.dduque.models.UI;
+package com.github.dduque.UI;
 
 import com.github.dduque.models.Enemy;
 import com.github.dduque.models.Goblin;
 import com.github.dduque.models.Player;
+import com.github.dduque.view.Colors;
 
 import java.util.Scanner;
 
@@ -54,7 +55,17 @@ public class UserOutput {
 
     public void displayHealth(Player player, Enemy enemy)
     {
-        System.out.println("Player health: " + player.getHealth() + "  ||  " + "Enemy health: " + enemy.getHealth());
+        double halfEnemyMaxHealth = enemy.getMaxHealth() / 2;
+        double halfPlayerMaxHealth = player.getMaxHealth() / 2;
+        String playerHealth = (player.getCurrentHealth() >= halfPlayerMaxHealth)
+                            ? Colors.GREEN + player.getCurrentHealth() + Colors.RESET
+                            : Colors.RED + player.getCurrentHealth() + Colors.RESET;
+
+        String enemyHealth = (enemy.getCurrentHealth() >= halfEnemyMaxHealth)
+                            ? Colors.GREEN + enemy.getCurrentHealth() + Colors.RESET
+                            : Colors.RED + enemy.getCurrentHealth() + Colors.RESET;
+
+        System.out.println("Player health: " + playerHealth + "  ||  " + "Enemy health: " + enemyHealth);
     }
 
     public void displayPlayerTurnMenu()
@@ -62,7 +73,19 @@ public class UserOutput {
         System.out.println("What would you like to do on your turn?");
         System.out.println("1. Attack");
         System.out.println("2. Defend");
-        System.out.println("3. Use Item");
+        System.out.println("3. Use Item (Not implemented yet.)");
+    }
+
+    public void displayEnemyAttackSuccess(String name, double damage)
+    {
+        System.out.println(name + " deals " + damage + " damage to you!");
+        playerInput.nextLine();
+    }
+
+    public void displayEnemyAttackFail()
+    {
+        System.out.println("The enemy misses you!");
+        playerInput.nextLine();
     }
 
 }

@@ -1,15 +1,11 @@
 package com.github.dduque;
 
 import com.github.dduque.models.Enemy;
-import com.github.dduque.models.Goblin;
 import com.github.dduque.models.Player;
-import com.github.dduque.models.UI.UserInput;
-import com.github.dduque.models.UI.UserOutput;
-import com.github.dduque.models.items.Item;
-import com.github.dduque.models.items.Weapon;
-import com.github.dduque.models.items.weapons.Bow;
-import com.github.dduque.models.items.weapons.Staff;
+import com.github.dduque.UI.UserInput;
+import com.github.dduque.UI.UserOutput;
 import com.github.dduque.models.items.weapons.Sword;
+import com.github.dduque.view.Console;
 
 public class Game
 {
@@ -23,6 +19,7 @@ public class Game
 
     private void run()
     {
+        Console.clearScreen();
         Player player = new Player();
         int menuSelection = -1;
 
@@ -80,12 +77,14 @@ public class Game
 
     public void initiateCombat(Player player, Enemy enemy)
     {
+
         boolean isEnemyAlive = true;
         boolean isPlayerAlive = true;
         userOutput.displayCombatBegin();
 
         while(isEnemyAlive && isPlayerAlive)
         {
+            Console.clearScreen();
             userOutput.displayHealth(player, enemy);
 
             // For now, player turn first. TODO: implement initiative.
@@ -107,10 +106,10 @@ public class Game
             }
 
             // Enemy attack, evaluate enemy health
-            if (enemy.getHealth() <= 0) {isEnemyAlive = false;}
+            if (enemy.getCurrentHealth() <= 0) {isEnemyAlive = false;}
             else {enemy.attackPlayer(player);}
 
-            if (player.getHealth() <= 0) {isPlayerAlive = false;}
+            if (player.getCurrentHealth() <= 0) {isPlayerAlive = false;}
         }
         if (!isEnemyAlive)
         {

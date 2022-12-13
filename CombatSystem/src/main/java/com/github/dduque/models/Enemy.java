@@ -1,20 +1,23 @@
 package com.github.dduque.models;
 
-import com.github.dduque.models.items.Item;
-import com.github.dduque.models.items.ItemType;
+import com.github.dduque.UI.UserOutput;
 
 public class Enemy {
 
     private String name;
-    private static double health = 100.0;
+    private static double maxHealth = 100.0;
+    private static double currentHealth = 100.0;
     private static double damage = 2.0;
     private static int armor = 0;
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public double getHealth() {return health;}
-    public void setHealth(double health) {Enemy.health = health;}
+    public double getCurrentHealth() {return currentHealth;}
+    public void setCurrentHealth(double health) {Enemy.currentHealth = health;}
+
+    public double getMaxHealth() {return maxHealth;}
+    public void setMaxHealth(double maxHealth) {Enemy.maxHealth = maxHealth;}
 
     public double getDamage() {return damage;}
     public void setDamage(double damage) {Enemy.damage = damage;}
@@ -32,28 +35,30 @@ public class Enemy {
         this.name = name;
     }
 
-    public Enemy(String name, double health, double damage, int armor)
+    public Enemy(String name, double maxHealth, double damage, int armor)
     {
         this.name = name;
-        this.health = health;
+        this.maxHealth = maxHealth;
         this.damage = damage;
         this.armor = armor;
     }
 
     public void attackPlayer(Player player)
     {
+        UserOutput userOutput = new UserOutput();
 
         if (damage > player.getArmor())
         {
             // if damage > armor, reduce enemy health
-            player.setHealth(player.getHealth() - (damage - player.getTotalArmor()));
-            System.out.println(getName() + " deals " + damage + " damage to you!");
+            player.setCurrentHealth(player.getCurrentHealth() - (damage - player.getTotalArmor()));
+            userOutput.displayEnemyAttackSuccess(getName(), damage);
         }
         else {
             // if not, print attack did not land message.
-            System.out.println("The enemy misses you!");
+            userOutput.displayEnemyAttackFail();
         }
         System.out.println();
+
     }
 
 }

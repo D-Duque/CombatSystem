@@ -23,7 +23,7 @@ public class PlayerTest {
         double expectedhealth = 9.0;
         // act
         testPlayer.attackEnemy(testGoblin);
-        double actualHealth = testGoblin.getHealth();
+        double actualHealth = testGoblin.getCurrentHealth();
         // assert
         String message = "Because attacking a goblin without weapons when the goblin has no armor and a health pool of 10 should return 9";
         Assert.assertEquals(message, expectedhealth, actualHealth, 0.5);

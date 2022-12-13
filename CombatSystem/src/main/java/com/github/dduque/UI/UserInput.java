@@ -1,4 +1,4 @@
-package com.github.dduque.models.UI;
+package com.github.dduque.UI;
 
 import com.github.dduque.models.Enemy;
 import com.github.dduque.models.Player;

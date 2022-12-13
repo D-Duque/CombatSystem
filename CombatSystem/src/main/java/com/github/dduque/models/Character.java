@@ -2,7 +2,8 @@ package com.github.dduque.models;
 
 public abstract class Character {
     private String name;
-    private double health;
+    private double maxHealth;
+    private double currentHealth;
     private double damage;
     private int armor;
 
@@ -12,8 +13,25 @@ public abstract class Character {
         this.name = name;
     }
 
-    public double getHealth() {return health;}
-    public void setHealth(double health) {this.health = health;}
+    public double getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth)
+    {
+        this.maxHealth = maxHealth;
+    }
+
+    public double getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(double currentHealth)
+    {
+        this.currentHealth = currentHealth;
+    }
 
     public int getArmor() {return armor;}
 
@@ -23,9 +41,10 @@ public abstract class Character {
     public Character() {
     }
 
-    public Character(String name, double health, int armor, double damage) {
+    public Character(String name, double maxHealth, double currentHealth, int armor, double damage) {
         this.name = name;
-        this.health = health;
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
         this.armor = armor;
         this.damage = damage;
     }

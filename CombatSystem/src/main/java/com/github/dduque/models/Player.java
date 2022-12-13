@@ -4,7 +4,8 @@ import com.github.dduque.models.items.Item;
 import com.github.dduque.models.items.ItemType;
 
 public class Player extends Character {
-    private double health = 10.0;
+    private double maxHealth = 10.0;
+    private double currentHealth = 10.0;
     private static double damage = 0.0;
     private int tempArmor;
     private int equippedArmor;
@@ -13,7 +14,6 @@ public class Player extends Character {
     public int getTempArmor() {return tempArmor;}
 
     public void setTempArmor(int tempArmor) {this.tempArmor = tempArmor;}
-
 
     public int getEquippedArmor() {return equippedArmor;}
 
@@ -24,12 +24,13 @@ public class Player extends Character {
 
     public Player() {
         super();
-        setHealth(health);
+        setCurrentHealth(currentHealth);
+        setMaxHealth(maxHealth);
         setDamage(damage);
     }
 
-    public Player(String name, double health, int totalArmor, double damage) {
-        super(name, 100.0, 1, 1.0);
+    public Player(String name, double maxHealth, double currentHealth, int totalArmor, double damage) {
+        super(name, 100.0, 100.0, 1, 1.0);
     }
 
     // attack
@@ -55,16 +56,16 @@ public class Player extends Character {
         if (totalDamage > enemy.getArmor())
             {
             // if damage > armor, reduce enemy health
-                if (totalDamage > enemy.getHealth())
+                if (totalDamage > enemy.getCurrentHealth())
                 {
-                    enemy.setHealth(0);
+                    enemy.setCurrentHealth(0);
                 }
-                else {enemy.setHealth(enemy.getHealth() - (totalDamage - enemy.getArmor()));}
-                System.out.println("You slice with your weapon and deal:  " + totalDamage + " damage!");
+                else {enemy.setCurrentHealth(enemy.getCurrentHealth() - (totalDamage - enemy.getArmor()));}
+                System.out.println("\nYou slice with your weapon and deal:  " + totalDamage + " damage!");
             }
         else {
             // if not, print attack did not land message.
-            System.out.println("Sorry, your attack did not land!");
+            System.out.println("\nSorry, your attack did not land!");
         }
         System.out.println();
     }
