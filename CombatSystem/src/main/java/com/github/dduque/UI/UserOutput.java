@@ -10,6 +10,15 @@ import java.util.Scanner;
 public class UserOutput {
     private static Scanner playerInput = new Scanner(System.in);
 
+    public void displayMainMenu()
+    {
+        System.out.println("1. Select your name");
+        System.out.println("2. Select your weapon");
+        System.out.println("3. Select your enemy");
+        System.out.println("4. Start combat");
+        System.out.println("5. exit");
+    }
+
     public void displayName() {
         System.out.println("What is your name?");
 
@@ -35,9 +44,9 @@ public class UserOutput {
         System.out.println("3. Dragon (Not implemented.)");
     }
 
-    public Enemy displayEnemySelection(char enemySelection)
+    public Enemy displayEnemySelection(int enemySelection)
     {
-        if (enemySelection == '1')
+        if (enemySelection == 1)
         {
             Goblin goblin = new Goblin("Binkus");
             String goblinName = goblin.getName();
@@ -86,6 +95,21 @@ public class UserOutput {
     {
         System.out.println("The enemy misses you!");
         playerInput.nextLine();
+    }
+
+    public void displayCombatResults(Player player, Enemy enemy, boolean isEnemyAlive)
+    {
+        if (!isEnemyAlive)
+        {
+            String playerName = player.getName();
+            System.out.println(playerName + ", you have defeated: " + enemy.getName() + " !");
+            System.out.println();
+        }
+        else
+        {
+            System.out.println(enemy.getName() + " has defeated you!");
+            System.out.println();
+        }
     }
 
 }

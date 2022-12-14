@@ -1,9 +1,6 @@
 package com.github.dduque.UI;
 
-import com.github.dduque.models.Enemy;
 import com.github.dduque.models.Player;
-
-import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInput {
@@ -15,18 +12,9 @@ public class UserInput {
         player.setName(input.nextLine().trim());
     }
 
-    public int getWeaponSelection() {
-        int weaponSelection = Integer.parseInt(input.nextLine());
-        return weaponSelection;
-    }
-    public char getEnemySelection() {
-        char enemySelection = input.nextLine().trim().charAt(0);
-        return enemySelection;
-    }
-
-    public int getTurnSelection() {
-        int turnSelection = Integer.parseInt(input.nextLine());
-        return turnSelection;
+    public int getSelection()
+    {
+        return Integer.parseInt(input.nextLine().trim());
     }
 
 }
